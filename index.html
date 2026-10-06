@@ -7,115 +7,155 @@
 <title>Portal del Truficultor</title>
 
 <style>
-* {
-  box-sizing: border-box;
+*{box-sizing:border-box}
+
+body{
+margin:0;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+background:#f5f3ee;
+color:#263322;
+line-height:1.45
 }
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: #f5f3ee;
-  color: #263322;
+header{
+background:#263d25;
+color:white;
+padding:28px 20px;
+text-align:center
 }
 
-header {
-  background: #263d25;
-  color: white;
-  padding: 28px 20px;
-  text-align: center;
+header h1{margin:0;font-size:30px}
+header p{margin:8px 0 0;font-size:14px}
+
+nav{
+background:white;
+padding:10px;
+display:flex;
+gap:7px;
+overflow-x:auto;
+position:sticky;
+top:0;
+z-index:10;
+box-shadow:0 2px 8px #0001
 }
 
-header h1 {
-  margin: 0;
-  font-size: 30px;
+nav a{
+white-space:nowrap;
+text-decoration:none;
+color:#304d2c;
+padding:8px 12px;
+border-radius:18px;
+background:#edf1e9;
+font-size:13px
 }
 
-header p {
-  margin: 8px 0 0;
-  opacity: .85;
+main{
+max-width:900px;
+margin:auto;
+padding:18px
 }
 
-nav {
-  background: white;
-  padding: 12px;
-  display: flex;
-  gap: 8px;
-  overflow-x: auto;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  box-shadow: 0 2px 8px #0001;
+.hero{
+background:#dfe8d8;
+padding:25px 20px;
+border-radius:18px;
+margin-bottom:28px
 }
 
-nav a {
-  white-space: nowrap;
-  text-decoration: none;
-  color: #304d2c;
-  padding: 9px 13px;
-  border-radius: 20px;
-  background: #edf1e9;
-  font-size: 14px;
+.hero h2{margin:8px 0;font-size:26px}
+
+.badge{
+display:inline-block;
+background:#8c6b3e;
+color:white;
+padding:5px 9px;
+border-radius:14px;
+font-size:11px
 }
 
-main {
-  max-width: 900px;
-  margin: auto;
-  padding: 20px;
+section{margin:35px 0}
+
+h2{color:#304d2c}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:14px
 }
 
-.hero {
-  background: #dfe8d8;
-  padding: 28px 22px;
-  border-radius: 18px;
-  margin-bottom: 25px;
+.card{
+background:white;
+padding:19px;
+border-radius:15px;
+box-shadow:0 2px 8px #0000000d;
+margin-bottom:12px
 }
 
-.hero h2 {
-  margin-top: 0;
-  font-size: 27px;
+.card h3{
+margin-top:0;
+color:#385d34
 }
 
-section {
-  margin: 35px 0;
+.tool{
+background:#eef3e9;
+border:1px solid #d5dfcf;
+padding:20px;
+border-radius:16px
 }
 
-h2 {
-  color: #304d2c;
+label{
+display:block;
+font-weight:600;
+margin-top:14px;
+margin-bottom:5px
 }
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 14px;
+input,select{
+width:100%;
+padding:12px;
+border:1px solid #bbb;
+border-radius:9px;
+font-size:16px;
+background:white
 }
 
-.card {
-  background: white;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 2px 8px #0000000d;
+button{
+width:100%;
+margin-top:18px;
+padding:13px;
+border:0;
+border-radius:10px;
+background:#385d34;
+color:white;
+font-size:16px;
+font-weight:600
 }
 
-.card h3 {
-  margin-top: 0;
-  color: #385d34;
+.result{
+margin-top:18px;
+padding:16px;
+background:white;
+border-radius:10px;
+border-left:5px solid #8c6b3e;
+display:none
 }
 
-footer {
-  background: #263d25;
-  color: white;
-  text-align: center;
-  padding: 25px;
-  margin-top: 40px;
+.note{
+font-size:13px;
+color:#555;
+background:#f7f4ec;
+padding:12px;
+border-radius:9px;
+margin-top:15px
 }
 
-.badge {
-  display: inline-block;
-  background: #8c6b3e;
-  color: white;
-  padding: 6px 10px;
-  border-radius: 15px;
-  font-size: 12px;
+footer{
+background:#263d25;
+color:white;
+text-align:center;
+padding:25px;
+margin-top:40px;
+font-size:13px
 }
 </style>
 </head>
@@ -123,173 +163,270 @@ footer {
 <body>
 
 <header>
-  <h1>🌳 Portal del Truficultor</h1>
-  <p>Información técnica y herramientas para la truficultura</p>
+<h1>🌳 Portal del Truficultor</h1>
+<p>Información técnica y herramientas para la truficultura</p>
 </header>
 
 <nav>
-  <a href="#manejo">Manejo</a>
-  <a href="#suelo">Suelo</a>
-  <a href="#poda">Poda</a>
-  <a href="#cal">Enmiendas</a>
-  <a href="#perros">Perros</a>
-  <a href="#analisis">Análisis</a>
+<a href="#manejo">Manejo</a>
+<a href="#suelo">Suelo</a>
+<a href="#enmiendas">Enmiendas</a>
+<a href="#poda">Poda</a>
+<a href="#perros">Perros</a>
+<a href="#calculadora">Calculadora</a>
 </nav>
 
 <main>
 
 <div class="hero">
-  <span class="badge">PROYECTO GRATUITO</span>
-  <h2>Una herramienta para el truficultor</h2>
-  <p>
-    Información técnica, registro de labores y herramientas prácticas
-    para el manejo de truferas de <i>Tuber melanosporum</i>.
-  </p>
+<span class="badge">PROYECTO GRATUITO</span>
+<h2>Una herramienta para el truficultor</h2>
+<p>
+Información técnica, herramientas y registro de labores
+para el manejo de truferas de <i>Tuber melanosporum</i>.
+</p>
 </div>
 
 <section id="manejo">
-  <h2>🌱 Manejo de la trufera</h2>
+<h2>🌱 Manejo de la trufera</h2>
 
-  <div class="cards">
+<div class="cards">
 
-    <div class="card">
-      <h3>Labores del suelo</h3>
-      <p>
-        Manejo de la superficie, control de vegetación,
-        aireación y conservación del suelo.
-      </p>
-    </div>
+<div class="card">
+<h3>Labores del suelo</h3>
+<p>
+Manejo de la superficie, control de vegetación,
+aireación y conservación de la estructura del suelo.
+</p>
+</div>
 
-    <div class="card">
-      <h3>Riego</h3>
-      <p>
-        Principios de manejo hídrico y seguimiento
-        de las necesidades de la trufera.
-      </p>
-    </div>
+<div class="card">
+<h3>💧 Riego</h3>
+<p>
+Seguimiento del agua disponible y manejo del riego
+según las condiciones de la plantación.
+</p>
+</div>
 
-    <div class="card">
-      <h3>Árbol hospedante</h3>
-      <p>
-        Manejo de encinas, robles y otras especies
-        asociadas a la trufa negra.
-      </p>
-    </div>
+<div class="card">
+<h3>🌳 Árbol hospedante</h3>
+<p>
+Manejo de encinas, robles y otras especies asociadas
+a la producción de trufa negra.
+</p>
+</div>
 
-  </div>
+</div>
 </section>
 
 <section id="suelo">
-  <h2>🪨 Suelo</h2>
+<h2>🪨 Suelo y análisis</h2>
 
-  <div class="cards">
+<div class="cards">
 
-    <div class="card">
-      <h3>pH</h3>
-      <p>
-        Importancia del pH para la producción de
-        <i>Tuber melanosporum</i>.
-      </p>
-    </div>
+<div class="card">
+<h3>pH</h3>
+<p>
+El pH es uno de los parámetros fundamentales para evaluar
+la aptitud del suelo para la truficultura.
+</p>
+</div>
 
-    <div class="card">
-      <h3>Estructura del suelo</h3>
-      <p>
-        Textura, drenaje, aireación y condiciones
-        necesarias para el desarrollo de la trufera.
-      </p>
-    </div>
+<div class="card">
+<h3>Textura y estructura</h3>
+<p>
+La textura, el drenaje, la aireación y la estructura
+influyen directamente en el funcionamiento del suelo.
+</p>
+</div>
 
-    <div class="card">
-      <h3>Materia orgánica</h3>
-      <p>
-        Consideraciones sobre materia orgánica
-        y actividad biológica del suelo.
-      </p>
-    </div>
+<div class="card">
+<h3>Materia orgánica</h3>
+<p>
+Debe interpretarse junto con el resto de las características
+físicas, químicas y biológicas del suelo.
+</p>
+</div>
 
-  </div>
+</div>
+
+<div class="note">
+<strong>Importante:</strong> el pH por sí solo no permite determinar
+una dosis correcta de cal. Para recomendar una dosis deben
+considerarse los resultados del análisis de suelo y las
+características de la enmienda.
+</div>
+
 </section>
 
-<section id="cal">
-  <h2>⚪ Enmiendas calcáreas</h2>
+<section id="enmiendas">
+<h2>⚪ Enmiendas calcáreas</h2>
 
-  <div class="card">
-    <h3>Aplicación de cal</h3>
+<div class="card">
 
-    <p>
-      Información sobre carbonato de calcio,
-      corrección de acidez y manejo de enmiendas.
-    </p>
+<h3>Aplicación de cal</h3>
 
-    <p>
-      <strong>Próximamente:</strong> calculadora de dosis
-      según superficie y características del suelo.
-    </p>
-  </div>
+<p>
+Las enmiendas calcáreas pueden utilizarse para modificar
+la reacción del suelo y aportar calcio o calcio y magnesio,
+dependiendo del producto utilizado.
+</p>
+
+<p>
+La dosis debe basarse preferentemente en una recomendación
+agronómica o de laboratorio y no únicamente en el valor de pH.
+</p>
+
+</div>
+</section>
+
+<section id="calculadora">
+
+<h2>🧮 Calculadora de enmienda</h2>
+
+<div class="tool">
+
+<p>
+Esta herramienta convierte una dosis recomendada de
+<strong>CaCO₃ equivalente</strong> en la cantidad real
+de producto que debes aplicar.
+</p>
+
+<label for="dosis">
+Dosis recomendada (kg CaCO₃ equivalente/ha)
+</label>
+
+<input id="dosis" type="number" min="0" placeholder="Ej: 3000">
+
+<label for="superficie">
+Superficie de la trufera (ha)
+</label>
+
+<input id="superficie" type="number" min="0" step="0.01" placeholder="Ej: 2,5">
+
+<label for="cce">
+Poder neutralizante del producto (CCE %)
+</label>
+
+<input id="cce" type="number" min="1" value="90">
+
+<button onclick="calcularCal()">
+Calcular cantidad de producto
+</button>
+
+<div id="resultado" class="result"></div>
+
+<div class="note">
+<strong>Ejemplo:</strong> si la recomendación es 3.000 kg
+de CaCO₃ equivalente/ha y el producto tiene un CCE de 90%,
+se necesitarán aproximadamente 3.333 kg de producto por hectárea.
+</div>
+
+</div>
+
 </section>
 
 <section id="poda">
-  <h2>✂️ Poda</h2>
+<h2>✂️ Poda</h2>
 
-  <div class="card">
-    <h3>Manejo de la copa</h3>
-    <p>
-      Principios de poda para controlar el desarrollo
-      del árbol y favorecer las condiciones adecuadas
-      para la producción de trufa.
-    </p>
-  </div>
+<div class="card">
+<h3>Manejo de la copa</h3>
+
+<p>
+La poda busca controlar el desarrollo del árbol y mantener
+condiciones adecuadas de luz, temperatura y circulación de aire
+en la zona productiva.
+</p>
+</div>
+
 </section>
 
 <section id="perros">
-  <h2>🐕 Perros truferos</h2>
+<h2>🐕 Perros truferos</h2>
 
-  <div class="cards">
+<div class="cards">
 
-    <div class="card">
-      <h3>Entrenamiento</h3>
-      <p>
-        Métodos y etapas para preparar un perro
-        para la búsqueda de trufas.
-      </p>
-    </div>
+<div class="card">
+<h3>Entrenamiento</h3>
+<p>
+Selección, habituación al olor y entrenamiento progresivo
+para la búsqueda de trufas.
+</p>
+</div>
 
-    <div class="card">
-      <h3>Cosecha</h3>
-      <p>
-        Manejo del perro durante la búsqueda
-        y extracción de la trufa.
-      </p>
-    </div>
+<div class="card">
+<h3>Cosecha</h3>
+<p>
+Manejo del perro durante la búsqueda y extracción cuidadosa
+de la trufa.
+</p>
+</div>
 
-  </div>
+</div>
 </section>
 
-<section id="analisis">
-  <h2>🔬 Análisis de suelo</h2>
+<section>
+<h2>📋 Registro de la explotación</h2>
 
-  <div class="card">
-    <h3>Interpretación</h3>
+<div class="card">
 
-    <p>
-      Registro de resultados de análisis y seguimiento
-      de la evolución del suelo de la trufera.
-    </p>
+<h3>Próximamente</h3>
 
-    <p>
-      <strong>Próximamente:</strong> formulario para
-      ingresar análisis y visualizar su evolución.
-    </p>
-  </div>
+<p>
+Aquí podremos registrar la información de cada trufera:
+superficie, árboles, año de plantación, análisis de suelo,
+poda, riego, enmiendas y cosecha.
+</p>
+
+</div>
 </section>
 
 </main>
 
 <footer>
-  Portal del Truficultor<br>
-  <small>Información técnica para productores de trufa</small>
+<strong>Portal del Truficultor</strong><br>
+Información técnica y herramientas para productores
 </footer>
+
+<script>
+
+function calcularCal(){
+
+const dosis=parseFloat(document.getElementById("dosis").value);
+const superficie=parseFloat(document.getElementById("superficie").value);
+const cce=parseFloat(document.getElementById("cce").value);
+
+const resultado=document.getElementById("resultado");
+
+if(!dosis || !superficie || !cce || cce<=0){
+
+resultado.style.display="block";
+resultado.innerHTML="Por favor, completa todos los campos.";
+return;
+
+}
+
+const kgHa=dosis/(cce/100);
+const kgTotal=kgHa*superficie;
+const toneladas=kgTotal/1000;
+
+resultado.style.display="block";
+
+resultado.innerHTML=
+"<strong>Resultado</strong><br><br>"+
+"Producto necesario por hectárea: <strong>"+
+kgHa.toLocaleString("es-CL",{maximumFractionDigits:1})+
+" kg/ha</strong><br><br>"+
+"Cantidad total para la superficie: <strong>"+
+kgTotal.toLocaleString("es-CL",{maximumFractionDigits:1})+
+" kg</strong><br><br>"+
+"Equivalente: <strong>"+
+toneladas.toLocaleString("es-CL",{maximumFractionDigits:2})+
+" toneladas</strong>";
+
+}
+
+</script>
 
 </body>
 </html>
