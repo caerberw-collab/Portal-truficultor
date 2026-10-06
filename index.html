@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Portal del Truficultor</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f5f3ee;
+  color: #263322;
+}
+
+header {
+  background: #263d25;
+  color: white;
+  padding: 28px 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 30px;
+}
+
+header p {
+  margin: 8px 0 0;
+  opacity: .85;
+}
+
+nav {
+  background: white;
+  padding: 12px;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 8px #0001;
+}
+
+nav a {
+  white-space: nowrap;
+  text-decoration: none;
+  color: #304d2c;
+  padding: 9px 13px;
+  border-radius: 20px;
+  background: #edf1e9;
+  font-size: 14px;
+}
+
+main {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+.hero {
+  background: #dfe8d8;
+  padding: 28px 22px;
+  border-radius: 18px;
+  margin-bottom: 25px;
+}
+
+.hero h2 {
+  margin-top: 0;
+  font-size: 27px;
+}
+
+section {
+  margin: 35px 0;
+}
+
+h2 {
+  color: #304d2c;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 2px 8px #0000000d;
+}
+
+.card h3 {
+  margin-top: 0;
+  color: #385d34;
+}
+
+footer {
+  background: #263d25;
+  color: white;
+  text-align: center;
+  padding: 25px;
+  margin-top: 40px;
+}
+
+.badge {
+  display: inline-block;
+  background: #8c6b3e;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 15px;
+  font-size: 12px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🌳 Portal del Truficultor</h1>
+  <p>Información técnica y herramientas para la truficultura</p>
+</header>
+
+<nav>
+  <a href="#manejo">Manejo</a>
+  <a href="#suelo">Suelo</a>
+  <a href="#poda">Poda</a>
+  <a href="#cal">Enmiendas</a>
+  <a href="#perros">Perros</a>
+  <a href="#analisis">Análisis</a>
+</nav>
+
+<main>
+
+<div class="hero">
+  <span class="badge">PROYECTO GRATUITO</span>
+  <h2>Una herramienta para el truficultor</h2>
+  <p>
+    Información técnica, registro de labores y herramientas prácticas
+    para el manejo de truferas de <i>Tuber melanosporum</i>.
+  </p>
+</div>
+
+<section id="manejo">
+  <h2>🌱 Manejo de la trufera</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>Labores del suelo</h3>
+      <p>
+        Manejo de la superficie, control de vegetación,
+        aireación y conservación del suelo.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Riego</h3>
+      <p>
+        Principios de manejo hídrico y seguimiento
+        de las necesidades de la trufera.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Árbol hospedante</h3>
+      <p>
+        Manejo de encinas, robles y otras especies
+        asociadas a la trufa negra.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section id="suelo">
+  <h2>🪨 Suelo</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>pH</h3>
+      <p>
+        Importancia del pH para la producción de
+        <i>Tuber melanosporum</i>.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Estructura del suelo</h3>
+      <p>
+        Textura, drenaje, aireación y condiciones
+        necesarias para el desarrollo de la trufera.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Materia orgánica</h3>
+      <p>
+        Consideraciones sobre materia orgánica
+        y actividad biológica del suelo.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section id="cal">
+  <h2>⚪ Enmiendas calcáreas</h2>
+
+  <div class="card">
+    <h3>Aplicación de cal</h3>
+
+    <p>
+      Información sobre carbonato de calcio,
+      corrección de acidez y manejo de enmiendas.
+    </p>
+
+    <p>
+      <strong>Próximamente:</strong> calculadora de dosis
+      según superficie y características del suelo.
+    </p>
+  </div>
+</section>
+
+<section id="poda">
+  <h2>✂️ Poda</h2>
+
+  <div class="card">
+    <h3>Manejo de la copa</h3>
+    <p>
+      Principios de poda para controlar el desarrollo
+      del árbol y favorecer las condiciones adecuadas
+      para la producción de trufa.
+    </p>
+  </div>
+</section>
+
+<section id="perros">
+  <h2>🐕 Perros truferos</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>Entrenamiento</h3>
+      <p>
+        Métodos y etapas para preparar un perro
+        para la búsqueda de trufas.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Cosecha</h3>
+      <p>
+        Manejo del perro durante la búsqueda
+        y extracción de la trufa.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section id="analisis">
+  <h2>🔬 Análisis de suelo</h2>
+
+  <div class="card">
+    <h3>Interpretación</h3>
+
+    <p>
+      Registro de resultados de análisis y seguimiento
+      de la evolución del suelo de la trufera.
+    </p>
+
+    <p>
+      <strong>Próximamente:</strong> formulario para
+      ingresar análisis y visualizar su evolución.
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  Portal del Truficultor<br>
+  <small>Información técnica para productores de trufa</small>
+</footer>
+
+</body>
+</html>
