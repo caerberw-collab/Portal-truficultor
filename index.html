@@ -110,6 +110,11 @@ margin-top:14px;
 margin-bottom:5px
 }
 
+small{
+font-weight:400;
+color:#666
+}
+
 input,select{
 width:100%;
 padding:12px;
@@ -149,6 +154,16 @@ border-radius:9px;
 margin-top:15px
 }
 
+.warning{
+font-size:13px;
+color:#5b4630;
+background:#f4ead8;
+padding:14px;
+border-radius:10px;
+margin-top:15px;
+border-left:4px solid #8c6b3e
+}
+
 footer{
 background:#263d25;
 color:white;
@@ -180,20 +195,25 @@ font-size:13px
 
 <div class="hero">
 <span class="badge">PROYECTO GRATUITO</span>
+
 <h2>Una herramienta para el truficultor</h2>
+
 <p>
 Información técnica, herramientas y registro de labores
 para el manejo de truferas de <i>Tuber melanosporum</i>.
 </p>
 </div>
 
+
 <section id="manejo">
+
 <h2>🌱 Manejo de la trufera</h2>
 
 <div class="cards">
 
 <div class="card">
 <h3>Labores del suelo</h3>
+
 <p>
 Manejo de la superficie, control de vegetación,
 aireación y conservación de la estructura del suelo.
@@ -202,6 +222,7 @@ aireación y conservación de la estructura del suelo.
 
 <div class="card">
 <h3>💧 Riego</h3>
+
 <p>
 Seguimiento del agua disponible y manejo del riego
 según las condiciones de la plantación.
@@ -210,6 +231,7 @@ según las condiciones de la plantación.
 
 <div class="card">
 <h3>🌳 Árbol hospedante</h3>
+
 <p>
 Manejo de encinas, robles y otras especies asociadas
 a la producción de trufa negra.
@@ -217,15 +239,19 @@ a la producción de trufa negra.
 </div>
 
 </div>
+
 </section>
 
+
 <section id="suelo">
+
 <h2>🪨 Suelo y análisis</h2>
 
 <div class="cards">
 
 <div class="card">
 <h3>pH</h3>
+
 <p>
 El pH es uno de los parámetros fundamentales para evaluar
 la aptitud del suelo para la truficultura.
@@ -234,6 +260,7 @@ la aptitud del suelo para la truficultura.
 
 <div class="card">
 <h3>Textura y estructura</h3>
+
 <p>
 La textura, el drenaje, la aireación y la estructura
 influyen directamente en el funcionamiento del suelo.
@@ -242,6 +269,7 @@ influyen directamente en el funcionamiento del suelo.
 
 <div class="card">
 <h3>Materia orgánica</h3>
+
 <p>
 Debe interpretarse junto con el resto de las características
 físicas, químicas y biológicas del suelo.
@@ -251,15 +279,19 @@ físicas, químicas y biológicas del suelo.
 </div>
 
 <div class="note">
+
 <strong>Importante:</strong> el pH por sí solo no permite determinar
 una dosis correcta de cal. Para recomendar una dosis deben
-considerarse los resultados del análisis de suelo y las
-características de la enmienda.
+considerarse los resultados del análisis de suelo,
+la capacidad tampón y las características de la enmienda.
+
 </div>
 
 </section>
 
+
 <section id="enmiendas">
+
 <h2>⚪ Enmiendas calcáreas</h2>
 
 <div class="card">
@@ -278,58 +310,132 @@ agronómica o de laboratorio y no únicamente en el valor de pH.
 </p>
 
 </div>
+
 </section>
+
 
 <section id="calculadora">
 
-<h2>🧮 Calculadora de enmienda</h2>
+<h2>🧮 Calculadora de encalado</h2>
 
 <div class="tool">
 
 <p>
-Esta herramienta convierte una dosis recomendada de
-<strong>CaCO₃ equivalente</strong> en la cantidad real
-de producto que debes aplicar.
+Esta herramienta estima la cantidad de enmienda calcárea
+necesaria utilizando el <strong>pH actual</strong>,
+el <strong>pH objetivo</strong> y la
+<strong>capacidad tampón del suelo</strong>.
 </p>
 
-<label for="dosis">
-Dosis recomendada (kg CaCO₃ equivalente/ha)
+
+<label for="phActual">
+pH actual del suelo
 </label>
 
-<input id="dosis" type="number" min="0" placeholder="Ej: 3000">
+<input
+id="phActual"
+type="number"
+min="3"
+max="9"
+step="0.01"
+placeholder="Ej.: 5,20"
+>
+
+
+<label for="phObjetivo">
+pH objetivo
+</label>
+
+<input
+id="phObjetivo"
+type="number"
+min="3"
+max="9"
+step="0.01"
+placeholder="Ej.: 6,00"
+>
+
+
+<label for="buffer">
+Capacidad tampón
+<br>
+<small>
+t CaCO₃/ha por cada 0,1 unidad de pH
+</small>
+</label>
+
+<input
+id="buffer"
+type="number"
+min="0"
+step="0.01"
+placeholder="Ej.: 0,80"
+>
+
 
 <label for="superficie">
 Superficie de la trufera (ha)
 </label>
 
-<input id="superficie" type="number" min="0" step="0.01" placeholder="Ej: 2,5">
+<input
+id="superficie"
+type="number"
+min="0.01"
+step="0.01"
+placeholder="Ej.: 2,5"
+>
 
-<label for="cce">
-Poder neutralizante del producto (CCE %)
+
+<label for="prnt">
+Poder neutralizante efectivo / PRNT (%)
 </label>
 
-<input id="cce" type="number" min="1" value="90">
+<input
+id="prnt"
+type="number"
+min="1"
+max="200"
+step="1"
+placeholder="Ej.: 90"
+>
 
-<button onclick="calcularCal()">
-Calcular cantidad de producto
+
+<button onclick="calcularEncalado()">
+Calcular dosis de cal
 </button>
 
-<div id="resultado" class="result"></div>
 
-<div class="note">
-<strong>Ejemplo:</strong> si la recomendación es 3.000 kg
-de CaCO₃ equivalente/ha y el producto tiene un CCE de 90%,
-se necesitarán aproximadamente 3.333 kg de producto por hectárea.
+<div id="resultadoEncalado" class="result"></div>
+
+
+<div class="warning">
+
+<strong>Importante:</strong>
+
+Esta calculadora no utiliza una tabla genérica de
+"pH = X toneladas de cal".
+
+La capacidad tampón debe proceder del análisis de suelo
+o de una determinación de laboratorio compatible con
+la unidad utilizada.
+
+El resultado es una estimación y debe contrastarse con
+la recomendación técnica correspondiente al suelo,
+cultivo, profundidad y producto utilizado.
+
 </div>
 
 </div>
 
 </section>
 
+
 <section id="poda">
+
 <h2>✂️ Poda</h2>
 
 <div class="card">
+
 <h3>Manejo de la copa</h3>
 
 <p>
@@ -337,35 +443,47 @@ La poda busca controlar el desarrollo del árbol y mantener
 condiciones adecuadas de luz, temperatura y circulación de aire
 en la zona productiva.
 </p>
+
 </div>
 
 </section>
 
+
 <section id="perros">
+
 <h2>🐕 Perros truferos</h2>
 
 <div class="cards">
 
 <div class="card">
+
 <h3>Entrenamiento</h3>
+
 <p>
 Selección, habituación al olor y entrenamiento progresivo
 para la búsqueda de trufas.
 </p>
+
 </div>
 
 <div class="card">
+
 <h3>Cosecha</h3>
+
 <p>
 Manejo del perro durante la búsqueda y extracción cuidadosa
 de la trufa.
 </p>
+
 </div>
 
 </div>
+
 </section>
 
+
 <section>
+
 <h2>📋 Registro de la explotación</h2>
 
 <div class="card">
@@ -379,49 +497,169 @@ poda, riego, enmiendas y cosecha.
 </p>
 
 </div>
+
 </section>
 
 </main>
 
+
 <footer>
-<strong>Portal del Truficultor</strong><br>
+
+<strong>Portal del Truficultor</strong>
+<br>
 Información técnica y herramientas para productores
+
 </footer>
+
 
 <script>
 
-function calcularCal(){
+function calcularEncalado(){
 
-const dosis=parseFloat(document.getElementById("dosis").value);
-const superficie=parseFloat(document.getElementById("superficie").value);
-const cce=parseFloat(document.getElementById("cce").value);
+const phActual =
+parseFloat(document.getElementById("phActual").value);
 
-const resultado=document.getElementById("resultado");
+const phObjetivo =
+parseFloat(document.getElementById("phObjetivo").value);
 
-if(!dosis || !superficie || !cce || cce<=0){
+const buffer =
+parseFloat(document.getElementById("buffer").value);
 
-resultado.style.display="block";
-resultado.innerHTML="Por favor, completa todos los campos.";
-return;
+const superficie =
+parseFloat(document.getElementById("superficie").value);
 
-}
+const prnt =
+parseFloat(document.getElementById("prnt").value);
 
-const kgHa=dosis/(cce/100);
-const kgTotal=kgHa*superficie;
-const toneladas=kgTotal/1000;
+const resultado =
+document.getElementById("resultadoEncalado");
+
+
+if(
+isNaN(phActual) ||
+isNaN(phObjetivo) ||
+isNaN(buffer) ||
+isNaN(superficie) ||
+isNaN(prnt)
+){
 
 resultado.style.display="block";
 
 resultado.innerHTML=
-"<strong>Resultado</strong><br><br>"+
-"Producto necesario por hectárea: <strong>"+
-kgHa.toLocaleString("es-CL",{maximumFractionDigits:1})+
-" kg/ha</strong><br><br>"+
-"Cantidad total para la superficie: <strong>"+
-kgTotal.toLocaleString("es-CL",{maximumFractionDigits:1})+
+"⚠️ Por favor, completa todos los campos.";
+
+return;
+
+}
+
+
+if(
+buffer<=0 ||
+superficie<=0 ||
+prnt<=0
+){
+
+resultado.style.display="block";
+
+resultado.innerHTML=
+"⚠️ Revisa los valores ingresados.";
+
+return;
+
+}
+
+
+if(phActual>=phObjetivo){
+
+resultado.style.display="block";
+
+resultado.innerHTML=
+"<strong>No se requiere cal según este cálculo.</strong><br><br>"+
+"El pH actual ("+
+phActual.toFixed(2)+
+") es igual o superior al pH objetivo ("+
+phObjetivo.toFixed(2)+
+").";
+
+return;
+
+}
+
+
+const diferenciaPH =
+phObjetivo-phActual;
+
+
+/*
+Cantidad de CaCO3 equivalente necesaria.
+
+La capacidad tampón está expresada como:
+t CaCO3/ha por cada 0,1 unidad de pH.
+*/
+
+const caco3PorHa =
+buffer*(diferenciaPH/0.1);
+
+
+/*
+Corrección por poder neutralizante efectivo.
+*/
+
+const productoPorHa =
+caco3PorHa/(prnt/100);
+
+
+const productoTotal =
+productoPorHa*superficie;
+
+
+const kgTotal =
+productoTotal*1000;
+
+
+resultado.style.display="block";
+
+
+resultado.innerHTML=
+
+"<strong>Resultado estimado</strong><br><br>"+
+
+"Incremento de pH necesario: <strong>"+
+diferenciaPH.toLocaleString("es-CL",{
+minimumFractionDigits:2,
+maximumFractionDigits:2
+})+
+"</strong><br><br>"+
+
+"CaCO₃ equivalente: <strong>"+
+caco3PorHa.toLocaleString("es-CL",{
+minimumFractionDigits:2,
+maximumFractionDigits:2
+})+
+" t/ha</strong><br><br>"+
+
+"Dosis de producto: <strong>"+
+productoPorHa.toLocaleString("es-CL",{
+minimumFractionDigits:2,
+maximumFractionDigits:2
+})+
+" t/ha</strong><br><br>"+
+
+"Cantidad total para "+
+superficie.toLocaleString("es-CL",{
+maximumFractionDigits:2
+})+
+" ha: <strong>"+
+kgTotal.toLocaleString("es-CL",{
+maximumFractionDigits:0
+})+
 " kg</strong><br><br>"+
+
 "Equivalente: <strong>"+
-toneladas.toLocaleString("es-CL",{maximumFractionDigits:2})+
+productoTotal.toLocaleString("es-CL",{
+minimumFractionDigits:2,
+maximumFractionDigits:2
+})+
 " toneladas</strong>";
 
 }
